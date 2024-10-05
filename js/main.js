@@ -26,13 +26,21 @@ async function checkWeather(city) {
 
 
         if (data.weather[0].main == "Clear") {
-            weatherIcon.className = "fa-solid fa-sun";
+            weatherIcon.className = " bi-brightness-high-fill";
+            weatherIcon.style.color = 'yellow'
+            document.body.style.backgroundImage = 'url(../images/michael-diane-weidner-h-rP5KSC2W0-unsplash.jpg)'
         } else if (data.weather[0].main == "Rain") {
-            weatherIcon.className = "fa-solid fa-cloud-rain";
-        } else if (data.weather[0].main == "Mist") {
-            weatherIcon.className = "fa-solid fa-cloud-mist";
+            weatherIcon.className = "bi-cloud-drizzle-fill";
+            weatherIcon.style.color = '#0e4669'
+            document.body.style.backgroundImage = ' url(../images/valentin-muller-bWtd1ZyEy6w-unsplash.jpg)'
+        } else if (data.weather[0].main == "Clouds") {
+            weatherIcon.className = "bi-cloud-fill";
+            weatherIcon.style.color = '#0e4669'
+            document.body.style.backgroundImage = 'url(../images/chuttersnap-rk2s0sm8xF4-unsplash.jpg)'
         } else if (data.weather[0].main == "Drizzle") {
-            weatherIcon.className = "fa-solid fa-cloud-drizzle";
+            weatherIcon.className = "bi-cloud-drizzle-fill";
+            weatherIcon.style.color = '#0e4669'
+            document.body.style.backgroundImage = 'url(../images/chuttersnap-rk2s0sm8xF4-unsplash.jpg)'
         }
 
 
