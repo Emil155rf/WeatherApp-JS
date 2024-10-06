@@ -18,33 +18,33 @@ async function checkWeather(city) {
         const data = await response.json()
         console.log(data)
 
-        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".city").innerHTML = data.name
         document.querySelector(".temp").innerHTML =
-            Math.round(data.main.temp) + "&#8451";
-        document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+            Math.round(data.main.temp) + "&#8451"
+        document.querySelector(".humidity").innerHTML = data.main.humidity + "%"
+        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h"
 
 
         if (data.weather[0].main == "Clear") {
-            weatherIcon.className = " bi-brightness-high-fill";
+            weatherIcon.className = " bi-brightness-high-fill"
             weatherIcon.style.color = 'yellow'
             document.body.style.backgroundImage = 'url(../images/michael-diane-weidner-h-rP5KSC2W0-unsplash.jpg)'
         } else if (data.weather[0].main == "Rain") {
-            weatherIcon.className = "bi-cloud-drizzle-fill";
+            weatherIcon.className = "bi-cloud-drizzle-fill"
             weatherIcon.style.color = '#0e4669'
             document.body.style.backgroundImage = ' url(../images/valentin-muller-bWtd1ZyEy6w-unsplash.jpg)'
         } else if (data.weather[0].main == "Clouds") {
-            weatherIcon.className = "bi-cloud-fill";
+            weatherIcon.className = "bi-cloud-fill"
             weatherIcon.style.color = '#0e4669'
             document.body.style.backgroundImage = 'url(../images/chuttersnap-rk2s0sm8xF4-unsplash.jpg)'
         } else if (data.weather[0].main == "Drizzle") {
-            weatherIcon.className = "bi-cloud-drizzle-fill";
+            weatherIcon.className = "bi-cloud-drizzle-fill"
             weatherIcon.style.color = '#0e4669'
             document.body.style.backgroundImage = 'url(../images/chuttersnap-rk2s0sm8xF4-unsplash.jpg)'
         }
 
 
-        weather.style.display = "block";
+        weather.style.display = "block"
     }
 }
 
@@ -55,7 +55,7 @@ searchButton.addEventListener('click', () => {
 
 searchInput.addEventListener("keydown", (event) => {
     if (event.keyCode === 13) {
-        checkWeather(searchInput.value);
-        searchInput.value = "";
+        checkWeather(searchInput.value)
+        searchInput.value = ""
     }
-});
+})
