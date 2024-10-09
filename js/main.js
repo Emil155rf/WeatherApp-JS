@@ -12,7 +12,7 @@ const error = document.querySelector('.error')
 async function checkWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`)
 
-    if (response.status == 404) {
+    if (response.status === 404) {
         weather.style.display = 'none'
     } else {
         const data = await response.json()
